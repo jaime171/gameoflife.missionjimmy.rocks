@@ -21,8 +21,14 @@ const operations = [
   [-1, -1],
 ];
 
-const generateGrid = ({ initValue, isRandom = false }) => {
-  const rows = [];
+const generateGrid = ({
+  initValue,
+  isRandom = false,
+}: {
+  initValue: number; // O el tipo que corresponda
+  isRandom?: boolean; // Este parámetro es opcional
+}): number[][] => {
+  const rows: number[][] = [];
   for (let i = 0; i < numRows; i++) {
     rows.push(
       Array.from(Array(numCols), () =>
@@ -36,6 +42,7 @@ const generateGrid = ({ initValue, isRandom = false }) => {
   }
   return rows;
 };
+
 
 export default function Home() {
   const [generation, setGeneration] = useState(0);
@@ -75,7 +82,7 @@ export default function Home() {
 
   return (
     <div className="p-8">
-      <h1 className="text-4xl font-bold text-center my-6">Conway's Game of Life</h1>
+      <h1 className="text-4xl font-bold text-center my-6">Conway&apos;s Game of Life</h1>
       <div className="border-t border-gray-300 my-4"></div>
 
       <p className="text-lg mb-6">
