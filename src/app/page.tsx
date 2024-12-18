@@ -7,7 +7,6 @@ import {
   NUM_COLS as numCols,
   TIMEOUT as timeout,
   RANDOM_PROBABILITY as randomProbability,
-  CELL_SIZE as cellSize
 } from "@/app/config";
 import links from "@/app/links";
 
