@@ -22,11 +22,11 @@ const operations = [
 ];
 
 const generateGrid = ({
-  initValue,
+  initValue = 0, // Valor por defecto
   isRandom = false,
 }: {
-  initValue: number; // O el tipo que corresponda
-  isRandom?: boolean; // Este parámetro es opcional
+  initValue?: number; // Ahora es opcional
+  isRandom?: boolean;
 }): number[][] => {
   const rows: number[][] = [];
   for (let i = 0; i < numRows; i++) {
@@ -42,7 +42,6 @@ const generateGrid = ({
   }
   return rows;
 };
-
 
 export default function Home() {
   const [generation, setGeneration] = useState(0);
