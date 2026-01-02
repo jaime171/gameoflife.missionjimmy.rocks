@@ -3,19 +3,64 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0e27;
+  --foreground: #ff00ff;
+  --neon-cyan: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-purple: #b026ff;
+  --neon-yellow: #ffd700;
+  --synth-dark: #0a0e27;
+  --synth-darker: #050815;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  @apply border-purple-500/30;
 }
 
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-rajdhani), 'Rajdhani', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-orbitron), 'Orbitron', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Synthwave glow effects */
+@layer utilities {
+  .neon-cyan {
+    text-shadow: 0 0 5px rgba(0, 243, 255, 0.5), 0 0 10px rgba(0, 243, 255, 0.3);
+  }
+
+  .neon-pink {
+    text-shadow: 0 0 5px rgba(255, 0, 255, 0.5), 0 0 10px rgba(255, 0, 255, 0.3);
+  }
+
+  .neon-purple {
+    text-shadow: 0 0 5px rgba(176, 38, 255, 0.5), 0 0 10px rgba(176, 38, 255, 0.3);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.4), 0 0 15px rgba(0, 243, 255, 0.2);
+  }
+
+  .glow-pink {
+    box-shadow: 0 0 8px rgba(255, 0, 255, 0.4), 0 0 15px rgba(255, 0, 255, 0.2);
+  }
+
+  .glow-purple {
+    box-shadow: 0 0 8px rgba(176, 38, 255, 0.4), 0 0 15px rgba(176, 38, 255, 0.2);
+  }
+
+  .glow-yellow {
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.4), 0 0 15px rgba(255, 215, 0, 0.2);
+  }
 }
